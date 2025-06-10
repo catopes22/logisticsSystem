@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    {% for route in routes %}
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-4">
+                    <img src="{{ route.thumbnail.url }}" class="card-img-top" alt="{{ route.title }}">
+                </div>
+                <div class="col-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{{ route.get_absolute_url }}">{{ route.title }}</a>
+                        </h5>
+                        <p class="card-text">{{ route.description }}</p>
+                        <small>Добавил {{ route.author.username }}, {{ route.create }},</small>
+                        в категорию: <a href="{{ route.category.get_absolute_url }}">{{ route.category.title }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

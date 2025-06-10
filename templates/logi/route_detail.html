@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+        <img src={{ route.thumbnail.url }} alt={{ route.title }} width="250"/>
+        <strong>{{ route.title }}</strong>
+        <p>{{ route.description }}</p>
+        <p>{{ route.text }}</p>
+        <small>{{ route.create }}</small>
+        <hr>
+        <span>{{ route.category.title }}</span>
+{% endblock %}
